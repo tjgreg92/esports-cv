@@ -1,0 +1,6 @@
+path: /Users/t-dawg/Documents/esports_cv/dataset
+train: images/train
+val: images/val
+names:
+  0: player
+  1: enemy

@@ -1,0 +1,45 @@
+# ============================================
+# Esports CV Pipeline - .gitignore
+# ============================================
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+*.egg
+
+# --- Virtual Environment ---
+venv/
+.venv/
+env/
+
+# --- Raw Video Data (too large for git) ---
+data/video/
+data/frames/
+
+# --- Rendered videos and large media ---
+*.mp4
+*.mov
+*.avi
+
+# --- Large model weights ---
+yolov8m.pt
+runs/**/weights/
+
+# --- Debug outputs ---
+debug/failures/
+debug/digit_samples/
+batch_processing.log
+
+# --- Presentation files (included in zip submission only) ---
+Esports_CV_Pipeline_Presentation.pptx
+Esports_CV_Pipeline_Summary.docx
+
+# --- OS and Editor ---
+.DS_Store
+.vscode/
+*.swp
+*.swo
+*~
+~$*

@@ -1,0 +1,6 @@
+names:
+  0: player
+  1: enemy
+path: /Users/t-dawg/Documents/esports_cv/data/yolo_dataset
+train: images/train
+val: images/train
