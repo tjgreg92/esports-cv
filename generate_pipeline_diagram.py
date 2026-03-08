@@ -19,7 +19,7 @@ ROOT_COPY = "Pipeline_diagram.png"
 
 
 def draw_box(ax, x_center, y_center, width, height, label, sublabel,
-             facecolor, edgecolor):
+             facecolor, edgecolor, fontsize_label=7.5, fontsize_sub=6):
     """Draw a rounded rectangle with centered two-line text."""
     x = x_center - width / 2
     y = y_center - height / 2
@@ -33,11 +33,11 @@ def draw_box(ax, x_center, y_center, width, height, label, sublabel,
     )
     ax.add_patch(box)
     ax.text(x_center, y_center + 0.11, label,
-            ha='center', va='center', fontsize=7.5,
+            ha='center', va='center', fontsize=fontsize_label,
             fontweight='bold', fontfamily='sans-serif', color='#212121',
             zorder=3)
     ax.text(x_center, y_center - 0.11, sublabel,
-            ha='center', va='center', fontsize=6,
+            ha='center', va='center', fontsize=fontsize_sub,
             fontfamily='sans-serif', fontstyle='italic', color='#555555',
             zorder=3)
 
@@ -65,13 +65,13 @@ def main():
 
     # Box dimensions
     full_w = 2.8
-    half_w = 1.28
+    half_w = 1.38
     box_h = 0.55
 
     # X positions
     cx = 1.75                       # center for full-width boxes
-    cx_left = 0.87                  # center for left parallel box
-    cx_right = 2.63                 # center for right parallel box
+    cx_left = 0.84                  # center for left parallel box
+    cx_right = 2.66                 # center for right parallel box
 
     # Y positions (top to bottom)
     y1 = 5.05   # Broadcast Video
@@ -92,13 +92,15 @@ def main():
     draw_box(ax, cx_left, y2, half_w, box_h,
              "Minimap Detection",
              "YOLOv8 Player Counts",
-             '#FFF3E0', '#F57C00')
+             '#FFF3E0', '#F57C00',
+             fontsize_label=6.8, fontsize_sub=5.5)
 
     # 3. Scoreboard OCR (right)
     draw_box(ax, cx_right, y2, half_w, box_h,
              "Scoreboard OCR",
              "Template Matching",
-             '#E3F2FD', '#1976D2')
+             '#E3F2FD', '#1976D2',
+             fontsize_label=6.8, fontsize_sub=5.5)
 
     # 4. Feature Engineering
     draw_box(ax, cx, y3, full_w, box_h,
