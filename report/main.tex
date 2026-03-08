@@ -76,12 +76,12 @@ The approach described here differs from prior work by operating entirely on bro
 
 The pipeline consists of five stages: data acquisition, minimap detection, scoreboard extraction, feature engineering, and win probability modeling. Figure~\ref{fig:pipeline} shows the full architecture.
 
-\begin{figure*}[t]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{figures/Pipeline_diagram.png}
+    \includegraphics[width=\columnwidth]{figures/Pipeline_diagram.png}
     \caption{End-to-end pipeline architecture. Raw broadcast footage is processed through two parallel extraction paths---YOLOv8 for minimap player detection and template matching for scoreboard OCR---before being combined into a structured telemetry dataset that feeds the XGBoost probability classifier.}
     \label{fig:pipeline}
-\end{figure*}
+\end{figure}
 
 \subsection{Data Acquisition}
 
@@ -185,7 +185,7 @@ The trained model reveals an interesting split in feature importance (Table~\ref
 
 Figure~\ref{fig:validation} shows the model's predictions on the held-out match. The top panel displays the actual scores over time; the bottom panel shows the predicted Team A win probability. Early in the match, when the score is close, the model assigns near-even odds. As Team A builds a scoring lead around the 250-second mark, the probability shifts decisively in their favor and remains there through the match's conclusion. The model correctly identifies the eventual winner for the majority of the match duration.
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\columnwidth]{figures/final_validation_chart.png}
     \caption{Hold-out match validation. Top: actual scores. Bottom: predicted Team A win probability (smoothed with 30-second rolling average).}
